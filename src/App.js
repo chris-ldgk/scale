@@ -147,11 +147,11 @@ const ScaleApp = () => {
   }
 
   if(getHash()) {
-    window.location.hash = encodeURI(Object.values(getHash()).join('/'))
+      window.history.pushState({}, "", encodeURI("#" + Object.values(currentState).join("/")));
   }
 
   const updateHash = () => {
-    window.location.hash = encodeURI(Object.values(currentState).join('/'))
+    window.history.pushState({}, "", encodeURI("#" + Object.values(currentState).join("/")));
   }
   
   const updateThemeColor = () => {
